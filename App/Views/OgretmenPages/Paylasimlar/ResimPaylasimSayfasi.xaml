@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.Paylasimlar.Resimler.ResimPaylasimSayfasi"            
+             Style="{StaticResource MyPageStyle}">
+
+    <StackLayout Margin="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>                
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Aspect="AspectFit"
+                   x:Name="selectedImage"
+                    Source="{Binding SelectedImagePath}"/>
+            <!--<Button Grid.Row="0"
+                    Grid.Column="1"
+                    CornerRadius="50"
+                    HeightRequest="25"
+                    WidthRequest="25"
+                    Text="Resmi Döndür"
+                    VerticalOptions="End"
+                    HorizontalOptions="End"
+                    Clicked="RotateImage_Clicked"/>-->
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Açıklama yazınız."
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"
+                   x:Name="aciklamaEntry"/>
+            
+            <StackLayout Grid.Row="2"
+                         Grid.RowSpan="2"
+                         Grid.Column="1">
+                <StackLayout>
+
+                    <Label VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Text="Fotoğrafa Yorum Yapılsın mı?"
+                           FontSize="12.5"/>
+
+                    <StackLayout Orientation="Horizontal">
+                            <Label Text="Hayır"   
+                                   x:Name="comment_switch_label"
+                                   VerticalOptions="Center"
+                                   FontSize="12.5"/>
+                            
+                                <Switch x:Name="comment_switch"
+                                        Toggled="comment_switch_Toggled"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout >
+
+                    <Label VerticalOptions="Center"
+                           HorizontalOptions="Center"  
+                           Text="Fotoğraf İndirilebilsin mi?"
+                           FontSize="12.5"/>
+
+                    <StackLayout Orientation="Horizontal">
+                            <Label Text="Hayır"
+                                   x:Name="download_switch_label"
+                                   VerticalOptions="Center"
+                                   FontSize="12.5"/>
+
+                            <Switch x:Name="download_switch"                                
+                                    Toggled="download_switch_Toggled"/>                    
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2"
+                         Grid.RowSpan="3"
+                         Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Title="Sınıf Seçiniz."
+                            TitleColor="#191919"                    
+                            TextColor="#191919"
+                            x:Name="picker1">
+                        <Picker.ItemsSource>
+
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <CheckBox Grid.Row="1"
+                              Grid.Column="0"
+                              x:Name="selectAllStudent"
+                              CheckedChanged="SelectAllStudent_CheckedChanged"/>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="Tümünü Seç"
+                           FontSize="Medium"/>
+                    <CollectionView x:Name="studentCollectionView"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox Grid.Row="0"
+                                                  Grid.Column="0"
+                                                  IsChecked="{Binding Selected}"
+                                                  x:Name="SelectedStudentCheckBox"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="1"
+                                               Text="{Binding Ogrenci_Ad}"
+                                               FontSize="Small"/>                                        
+                                    </Grid>
+                                </StackLayout>                                
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>               
+            </StackLayout>            
+             
+            <StackLayout Grid.Row="4"
+                         Grid.Column="1">
+                <Button Text="Galeriden seç"
+                        Clicked="PickPhoto"
+                        CornerRadius="24"/>
+
+                <Button Clicked="TakePhoto"
+                        Text="Kameradan çek"
+                        CornerRadius="24"/>
+            </StackLayout>            
+            <Button Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Clicked="SaveImageButton"
+                    Text="KAYDET"
+                    CornerRadius="24"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

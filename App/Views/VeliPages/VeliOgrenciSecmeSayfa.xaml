@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.VeliPages.VeliOgrenciSecmeSayfa"
+             Style="{StaticResource MyPageStyle}">
+
+    <StackLayout>
+        <Grid Margin="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   x:Name="cocukTamAd"
+                   Placeholder="Çocuğunuzun tam adını giriniz. (Ad Soyad)"
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"                   
+                   Keyboard="Chat"
+                   FontSize="Small"/>
+            
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   x:Name="sinifKod"
+                   Placeholder="Sınıf Kodunu Giriniz."
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"
+                   Keyboard="Chat"
+                   FontSize="Small"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Ekle"
+                    TextColor="#FBF6EE"
+                    BackgroundColor="#191919"
+                    Clicked="CocukEkle_Clicked"/>
+
+            <CollectionView Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            x:Name="ogrenciSinifCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       Text="{Binding Ogrenci_Ad}"
+                                       FontSize="Medium"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="0" 
+                                       Grid.ColumnSpan="2"
+                                       Text="{Binding Sinif_Ad}"
+                                       FontSize="Medium"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+
+                                <Button Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="2" 
+                                        TextColor="#FBF6EE"
+                                        BackgroundColor="#191919"
+                                        Text="Görüntüle"
+                                        FontSize="Micro"
+                                        Clicked="Button_Clicked"/>
+
+                                <BoxView Grid.Row="2"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         BackgroundColor="#191919"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </StackLayout>
+</ContentPage>

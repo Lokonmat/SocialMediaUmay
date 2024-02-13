@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA0Rs8AAqkSTYfhtShshxemcI3tLBBOS3g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>660680446140</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.companyname.App</string>
+	<key>PROJECT_ID</key>
+	<string>umayapp-c49b6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>umayapp-c49b6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:660680446140:ios:28e4a9540b0b3c68f240b9</string>
+	<key>DATABASE_URL</key>
+	<string>https://umayapp-c49b6-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>

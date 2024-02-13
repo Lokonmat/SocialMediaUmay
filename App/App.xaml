@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:App.Utils"
+             x:Class="App.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:IsPdfConverter x:Key="IsPdfConverter" />
+            <local:IsWordConverter x:Key="IsWordConverter" />
+            <local:IsExelConverter x:Key="IsExelConverter" />
+            <local:IsChatConverter x:Key="IsChatConverter" />
+            <local:IsImageConverter x:Key="IsImageConverter" />
+            <local:IsVideoConverter x:Key="IsVideoConverter" />
+            <Style TargetType="ContentPage" x:Key="MyPageStyle">
+                <Setter Property="BackgroundColor" Value="#FBF6EE" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#191919"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

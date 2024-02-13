@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OrtakSayfalar.BegenenlerListesi"
+             Style="{StaticResource MyPageStyle}">
+    
+    <ContentPage.Content>
+        <CollectionView x:Name="begenenKisilerListesi">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="5,0,0,0">
+                        <Label Text="{Binding BegenenKisiAd}"
+                               FontSize="Large"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

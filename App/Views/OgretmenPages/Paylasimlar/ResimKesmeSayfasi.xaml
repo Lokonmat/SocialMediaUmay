@@ -1,0 +1,19 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.Paylasimlar.ResimKesmeSayfasi"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             Style="{StaticResource MyPageStyle}">
+    <StackLayout>
+        <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="OnCanvasViewPaintSurface"
+                           Touch="OnCanvasViewTouch"
+                           BackgroundColor="#4F4A45"
+                           EnableTouchEvents="True"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="Fill"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,10">
+            <Button Text="Kaydet" Clicked="OnCropClicked"/>
+            <Button Text="Rotate" Clicked="OnRotateClicked" Margin="10,0,0,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

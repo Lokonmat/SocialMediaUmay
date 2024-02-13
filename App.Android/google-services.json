@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "660680446140",
+    "firebase_url": "https://umayapp-c49b6-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "umayapp-c49b6",
+    "storage_bucket": "umayapp-c49b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660680446140:android:e8317a6c0748b72bf240b9",
+        "android_client_info": {
+          "package_name": "umayANA.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660680446140-8n7l7uoi7amjrmqi3j6c1a4220h0gqrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKwQM65A7a5kkMm6WEeBt0-1vbZ_aj8QA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660680446140-8n7l7uoi7amjrmqi3j6c1a4220h0gqrt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

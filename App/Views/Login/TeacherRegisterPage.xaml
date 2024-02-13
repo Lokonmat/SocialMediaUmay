@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Login.TeacherRegisterPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+
+
+    <AbsoluteLayout>
+
+        <BoxView AbsoluteLayout.LayoutBounds="1, -1.2, 1, 0.9"
+                 AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional,PositionProportional"
+                 Color="#F86F03"                 
+                 CornerRadius="100"/>
+
+        <StackLayout AbsoluteLayout.LayoutBounds="0.2, 0.05, 300, 600"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     Margin="10,30,10,0">
+
+            <Label Text="İsim ve Soyisim:" 
+                   TextColor="#FFF6F4"
+                   FontSize="Medium"/>
+
+            <Entry x:Name="TeacherFullNameEntry"
+                   Placeholder="İsim Giriniz."
+                   PlaceholderColor="#FFF6F4"
+                   Keyboard="Default"/>
+
+            <Label Text="Mail Adresi:" 
+                   TextColor="#FFF6F4"
+                   FontSize="Medium"/>
+
+            <Entry x:Name="TeacherMailEntry"
+                    Placeholder="Mail Adresinizi Giriniz."
+                   PlaceholderColor="#FFF6F4"
+                   Keyboard="Email"/>
+
+            <Label Text="Telefon Numarası:" 
+                   TextColor="#FFF6F4"
+                   FontSize="Medium"/>
+
+            <Entry x:Name="TeacherPhoneEntry"
+                   Placeholder="Telefon Numaranızı Giriniz."
+                   PlaceholderColor="#FFF6F4"/>
+
+            <Label  Text="Şifre:" 
+                    TextColor="#FFF6F4"
+                    FontSize="Medium"/>
+
+            <Entry  x:Name="TeacherPasswordEntry"
+                    Placeholder="Şifrenizi Giriniz."
+                    PlaceholderColor="#FFF6F4"
+                    Keyboard="Default"
+                    IsPassword="True"/>
+
+            <Label Text="Kurum Kodu:"
+                   TextColor="#FFF6F4"
+                   FontSize="Medium"/>
+
+            <Entry x:Name="TeacherSchoolCodeEntry"
+                   Placeholder="Kurum kodu giriniz."
+                   PlaceholderColor="#FFF6F4"
+                   Keyboard="Default"/>
+            <Label Text="* Bir kuruma kayıtlı değilseniz kurum kodunu boş bırakınız."
+                   TextColor="#FFF6F4"
+                   FontSize="Small"
+                   FontAttributes="Italic"/>
+
+        </StackLayout>
+
+        <Button AbsoluteLayout.LayoutBounds="0.2, 0.8, 125, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="GERİ"
+                BackgroundColor="#525FE1"
+                CornerRadius="35" 
+                Clicked="LoginPageButton"/>
+
+        <Button AbsoluteLayout.LayoutBounds="0.8, 0.8, 125, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="KAYDI TAMAMLA"
+                BackgroundColor="#525FE1"
+                CornerRadius="35"
+                Clicked="Save_Ogretmen"/>
+
+    </AbsoluteLayout>
+</ContentPage>

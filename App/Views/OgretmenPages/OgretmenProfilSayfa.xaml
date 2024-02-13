@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.OgretmenProfilSayfa"            
+             xmlns:local="clr-namespace:App.Views"
+             xmlns:local2="clr-namespace:App.Views.ProfileLyoutMenuViews"
+             Style="{StaticResource MyPageStyle}">
+    <FlyoutPage.Flyout>
+        <local:ProfileFlyoutMenuPage x:Name="flyout"/>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage BarBackgroundColor="white"
+                        BarTextColor="Black">
+            <x:Arguments>
+                <local2:ProfilePage/>
+            </x:Arguments>
+        </NavigationPage>
+        
+    </FlyoutPage.Detail>
+</FlyoutPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="App.Views.PopUpPages.ChangeMailPage"
+           Size="300,300">
+
+    <StackLayout>
+        <Grid Margin="25,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="Lütfen yeni mail adresini giriniz."
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Yeni mail adresinizi giriniz."
+                   x:Name="reMailEntry"
+                   IsPassword="True"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Text="İptal "
+                    x:Name="Close"
+                    Clicked="Close_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Kaydet"
+                    x:Name="SaveAndClose"
+                    Clicked="SaveAndClose_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+        </Grid>
+    </StackLayout>
+</xct:Popup>

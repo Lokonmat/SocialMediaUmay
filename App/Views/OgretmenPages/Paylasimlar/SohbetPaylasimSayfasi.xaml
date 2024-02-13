@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.Paylasimlar.SohbetPaylasimSayfasi"
+             Style="{StaticResource MyPageStyle}">
+    <StackLayout Margin="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                         x:Name="chatFrame"
+                         Padding="10">
+                <Editor x:Name="chatEntry"
+                        TextChanged="chatEntry_TextChanged"
+                        MaxLength="400"
+                        VerticalOptions="EndAndExpand"
+                        AutoSize="TextChanges"
+                        Placeholder="Tartışma içeriğini buraya yazınız."
+                        PlaceholderColor="#191919"
+                        TextColor="#191919"/>
+                <Label x:Name="charCountLabel"
+                        Text="400/400"
+                        HorizontalOptions="End"/>
+            </StackLayout>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Tartışma başlığını yazınız."
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"
+                   x:Name="chatTopicEntry"/>
+            
+            <StackLayout Grid.Row="2"
+                         Grid.RowSpan="3"
+                         Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Title="Sınıf Seçiniz."
+                            TitleColor="#191919"  
+                            TextColor="#191919"
+                            x:Name="picker1">
+                        <Picker.ItemsSource>
+
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <CheckBox Grid.Row="1"
+                              Grid.Column="0"
+                              x:Name="selectAllStudent"
+                              CheckedChanged="SelectAllStudent_CheckedChanged"/>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="Tümünü Seç"
+                           FontSize="Medium"/>
+                    <CollectionView x:Name="studentCollectionView"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox Grid.Row="0"
+                                                  Grid.Column="0"
+                                                  IsChecked="{Binding Selected}"
+                                                  x:Name="SelectedStudentCheckBox"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="1"
+                                               Text="{Binding Ogrenci_Ad}"
+                                               FontSize="Small"/>
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
+
+            <Button Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Clicked="SaveChatButton"
+                    CornerRadius="24"
+                    Text="KAYDET"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

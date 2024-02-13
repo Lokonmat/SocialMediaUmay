@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+           Size="300,300"
+           x:Class="App.Views.PopUpPages.UserNamePage">
+
+    <StackLayout>
+        <Grid Margin="25,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="Lütfen tam adınızda hata varsa düzeltiniz."
+                   TextColor="Black"
+                   FontSize="20"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   x:Name="reNameEntry"
+                   TextColor="Black"
+                   PlaceholderColor="Black"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Text="İptal "
+                    x:Name="Close"
+                    Clicked="Close_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Kaydet"
+                    x:Name="SaveAndClose"
+                    Clicked="SaveAndClose_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+        </Grid>
+    </StackLayout>
+</xct:Popup>

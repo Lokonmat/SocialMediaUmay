@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.OgretmenResimDuzenleme"
+             Style="{StaticResource MyPageStyle}">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="resimler"
+                   Aspect="AspectFit"
+                   Margin="5"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+
+            <Editor x:Name="aciklama"
+                    IsTextPredictionEnabled="True" 
+                    IsSpellCheckEnabled="True"
+                    VerticalOptions="FillAndExpand"
+                    PlaceholderColor="#191919"
+                    TextColor="#191919"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+
+            <Button Text="Kaydet"
+                    x:Name="kaydetButton"
+                    Clicked="kaydetButton_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

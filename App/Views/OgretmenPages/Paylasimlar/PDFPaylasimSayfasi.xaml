@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.Paylasimlar.PDFPaylasimSayfasi"
+             Style="{StaticResource MyPageStyle}">
+
+    <StackLayout Margin="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   x:Name="pdfFrame"
+                   IsVisible="False"
+                   WidthRequest="50"
+                   HeightRequest="150"
+                   Padding="10"
+                   CornerRadius="10">   
+                <StackLayout>
+                    <Image Source="logo_pdf.png"
+                           BackgroundColor="#F40F02"
+                           HeightRequest="250" 
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <Label x:Name="pdfNameLabel"
+                           FontSize="20"
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Açıklama yazınız."
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"
+                   x:Name="aciklamaEntry"/>
+
+            <StackLayout Grid.Row="2"
+                         Grid.RowSpan="2"
+                         Grid.Column="1"
+                         VerticalOptions="CenterAndExpand">
+                
+                <Label VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Text="PDF'e Yorum Yapılsın mı?"
+                       FontSize="12.5"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Hayır"  
+                           x:Name="comment_switch_label"
+                           VerticalOptions="Center"
+                           FontSize="12.5"/>
+
+                    <Switch x:Name="comment_switch"
+                            Toggled="comment_switch_Toggled"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2"
+                         Grid.RowSpan="3"
+                         Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Title="Sınıf Seçiniz."
+                            TitleColor="#191919"
+                            TextColor="#191919"
+                            x:Name="picker1">
+                        <Picker.ItemsSource>
+
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <CheckBox Grid.Row="1"
+                              Grid.Column="0"
+                              x:Name="selectAllStudent"
+                              CheckedChanged="SelectAllStudent_CheckedChanged"/>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="Tümünü Seç"
+                           FontSize="Medium"/>
+
+                    <CollectionView x:Name="studentCollectionView"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox Grid.Row="0"
+                                                  Grid.Column="0"
+                                                  IsChecked="{Binding Selected}"
+                                                  x:Name="SelectedStudentCheckBox"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="1"
+                                               Text="{Binding Ogrenci_Ad}"                                              
+                                               FontSize="Medium"/>
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4"
+                         Grid.Column="1"
+                         VerticalOptions="CenterAndExpand">
+                <Button Text="PDF Seç"
+                        CornerRadius="24"
+                        Clicked="PickPDF_Clicked"/>
+            </StackLayout>
+            
+
+            <Button Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Clicked="SavePDFButton"
+                    CornerRadius="24"
+                    Text="KAYDET"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

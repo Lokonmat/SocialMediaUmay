@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ProfileLyoutMenuViews.ClassPage"
+              Style="{StaticResource MyPageStyle}">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Entry Grid.Row="0"
+                   Grid.Column="0"
+                   Placeholder="Sınıf Adını Giriniz."
+                   PlaceholderColor="#191919"
+                   TextColor="#191919"
+                   x:Name="classNameEntry"/>
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Sınıf Ekle"
+                    FontSize="Large"
+                    x:Name="addClass"
+                    Clicked="AddClass_Clicked"/>
+
+            <Frame Grid.Row="1"
+                   Grid.Column="0"
+                   BorderColor="#191919">
+
+                <Label Text="Sınıf Adı"
+                       FontSize="Body"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame Grid.Row="1"
+                   Grid.Column="1"
+                   BorderColor="#191919"
+                   Padding="0">
+
+                <Label Text="Sınıf Kodu"
+                       FontSize="Body"                       
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+            </Frame>
+            
+            <StackLayout Grid.Row="2"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2">
+                <CollectionView ItemsSource="{Binding Classes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid Margin="5,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions> 
+                                    <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           FontSize="Medium"
+                                           Text="{Binding Class_Name}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnLabelTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           Text="{Binding Class_Code}" 
+                                           FontSize="Medium"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="CenterAndExpand">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnLabelTapped2"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <ImageButton Grid.Row="0"
+                                                 Grid.Column="2"
+                                                 HorizontalOptions="End"
+                                                 VerticalOptions="Center"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="DeleteClass_Clicked"
+                                                 Source="icon_x.png"
+                                                 Margin="0,0,5,0"/>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            
+            <Label Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Text="*Sınıf adına tıklanırsa o sınıfa aite öğrenci listesi gelir."/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

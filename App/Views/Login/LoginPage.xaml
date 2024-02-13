@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Login.LoginPage"
+             
+             Background="#F6F1EE"
+             NavigationPage.HasNavigationBar="False">
+
+    <AbsoluteLayout>
+
+        <BoxView AbsoluteLayout.LayoutBounds="1, -1, 1, 0.845"
+                 AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional,PositionProportional"
+                 Color="#F57000"                 
+                 CornerRadius="100"/>
+
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 300,300"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     Orientation="Vertical">
+
+            <Label  Text="Mail Adresi"
+                    TextColor="#F6F1EE"
+                    FontSize="Medium"/>
+
+            <Entry x:Name="userMailEntry"
+                   Placeholder="Mail Adresi"
+                   Keyboard="Email"
+                   FontSize="Medium"/>
+
+            <Label Text="Şifre"
+                   TextColor="#F6F1EE"
+                   FontSize="Medium"/>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Entry x:Name="passwordEntry"
+                       Placeholder="Şifre"
+                       IsPassword="True"
+                       FontSize="Medium"
+                       Keyboard="Default"
+                       WidthRequest="250"/>
+
+                <ImageButton AbsoluteLayout.LayoutBounds="0.8, 0.51"
+                             AbsoluteLayout.LayoutFlags="PositionProportional"
+                             x:Name="passwordEye"
+                             Source="closedeye.png"
+                             WidthRequest="30"
+                             HeightRequest="30"
+                             BackgroundColor="Transparent"
+                             Clicked="PasswordEye"/>
+
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.8, 0.51"
+                         AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <CheckBox Grid.Row="0"
+                              Grid.Column="0"
+                              Color="#F6F1EE"
+                              x:Name="ogretmenCheckbox"/>
+
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="Öğretmenim"/>
+
+                    <CheckBox Grid.Row="1"
+                              Grid.Column="0"
+                              Color="#F6F1EE"                              
+                              x:Name="veliCheckbox"/>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="Veliyim"/>
+                </Grid>
+                
+            </StackLayout>
+        </StackLayout>
+
+
+        <Label AbsoluteLayout.LayoutBounds="0.2, 0.2"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Text="GİRİŞ"
+               TextColor="#F6F1EE"
+               FontSize="40"/>
+
+        <BoxView AbsoluteLayout.LayoutBounds="0.3, 0.26, 200, 5"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 Color="#F6F1EE"/>
+
+        <Label AbsoluteLayout.LayoutBounds="0.7, 0.6"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Text="Beni Hatırla"
+               TextColor="#F6F1EE"/>
+
+        <Switch AbsoluteLayout.LayoutBounds="0.85, 0.603" 
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                x:Name="rememberSwitch"
+                Toggled="RememberSwitch"
+                OnColor="#F6F1EE"
+                ThumbColor="#6C5F5B"/>
+
+        <Button AbsoluteLayout.LayoutBounds="0.2, 0.69, 125, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="GİRİŞ YAP"
+                BackgroundColor="#6C5F5B"
+                CornerRadius="35"
+                Clicked="LoginButton_Clicked"/>
+
+        <Button AbsoluteLayout.LayoutBounds="0.8, 0.69, 125, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="KAYIT OL"
+                BackgroundColor="#6C5F5B"
+                CornerRadius="35"
+                Clicked="RegisterSelectButton"/>
+
+        <Label AbsoluteLayout.LayoutBounds="0.5, 0.85, 125, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+               Text="İnternet Sitemiz" 
+               TextColor="#ED7D31"/>
+
+        <Label AbsoluteLayout.LayoutBounds="0.5, 0.85"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+               Text="http://www.sekizdesekiz.com"
+               TextColor="Blue"
+               FontAttributes="Bold">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLabelTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ChatPages.AddRoomPage"
+             Style="{StaticResource MyPageStyle}">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding OgrenciSiniflar}"
+                  ItemSelected="ListView_ItemSelected"
+                  x:Name="ogrenciList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Ogrenci_Ad}"/>
+                                        <Span Text=" - "/>
+                                        <Span Text="{Binding Sinif_Ad}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ChatPages.AddRoomParent"
+             Style="{StaticResource MyPageStyle}">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Ogretmenler}"
+                  ItemSelected="ListView_ItemSelected"
+                  x:Name="ogrenciList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Ogretmen_Ad}"
+                                              FontSize="20"/>
+                                        <Span Text=" - "
+                                              FontSize="20"/>
+                                        <Span Text="{Binding Sinif_Ad}"
+                                              FontSize="20"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="App.Views.VeliPages.VeliAnaSayfa"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource MyPageStyle}">
+    <StackLayout >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0"
+                         Margin="10,0,10,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Umayana"
+                            Grid.Column="0"
+                            FontSize="Medium"
+                            VerticalOptions="Center"
+                            HorizontalOptions="StartAndExpand"/>
+
+                    <ImageButton Grid.Row="0"
+                                 Grid.Column="1"
+                                 Source="icon_mail.png"
+                                 BackgroundColor="Transparent"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="StartAndExpand"
+                                 Clicked="Messages_Clicked"/>
+                </Grid>
+
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="2"
+                                      Orientation="Horizontal">
+
+                                    <Label Text="{Binding Ogretmen_Ad}"
+                                    FontSize="20"
+                                    Margin="25,0,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OgretmenLabel_Tapped" CommandParameter="{Binding Ogretmen_Ad}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                </StackLayout>
+                                <!--Chat ise bu kısım gözükücek resim yerinde-->
+                                <StackLayout IsVisible="{Binding paylasim_turu, Converter={StaticResource IsChatConverter}}"
+                                             Grid.Row="1"
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="2">
+                                    <Label Text="{Binding paylasim_adi}"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="StartAndExpand"
+                                           FontSize="Medium"
+                                           Margin="15"/>
+                                </StackLayout>
+                                <!--Pdf ise bu kısım gözükücek resim yerinde-->
+                                    <StackLayout IsVisible="{Binding paylasim_turu, Converter={StaticResource IsPdfConverter}}"
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                BackgroundColor="#F40F02">
+                                        <Image Source="logo_pdf.png"
+                                                HeightRequest="400"/>
+                                        <Label Text="{Binding paylasim_adi}"
+                                                HorizontalTextAlignment="Center"
+                                                FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--Word dosyası ise bu kısım gözükücek resim yerinde-->
+                                <StackLayout IsVisible="{Binding paylasim_turu, Converter={StaticResource IsWordConverter}}"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            BackgroundColor="#2b579a">
+                                    <Image Source="logo_word.png"
+                                            HeightRequest="400"/>
+                                    <Label Text="{Binding paylasim_adi}"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Medium"/>
+                                </StackLayout>
+                                <!--Exel dosyası ise bu kısım gözükücek resim yerinde-->
+                                <StackLayout IsVisible="{Binding paylasim_turu, Converter={StaticResource IsExelConverter}}"
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                BackgroundColor="#217346">
+                                    <Image Source="logo_excel.png"
+                                            HeightRequest="400"/>
+                                    <Label Text="{Binding paylasim_adi}"
+                                            HorizontalTextAlignment="Center"
+                                            FontSize="Medium"/>
+                                </StackLayout>
+                                <!--Video dosyası ise bu kısım gözükücek resim yerinde-->
+                                <StackLayout IsVisible="{Binding paylasim_turu, Converter={StaticResource IsVideoConverter}}"
+                                             Grid.Row="1"
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="2"
+                                             BackgroundColor="Transparent">
+                                    <extensions:MediaElement Source="{Binding PostImage}"
+                                                             HeightRequest="400"/>
+                                </StackLayout>
+                                <!--Resim ise bu kısım gözükücek resim yerinde-->
+                                <Image Source="{Binding PostImage2}"
+                                       IsVisible="{Binding paylasim_turu, Converter={StaticResource IsImageConverter}}"
+                                       x:Name="resimler"
+                                       Aspect="AspectFit"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2">
+                                </Image>
+                                <StackLayout Grid.Row="2"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="2"
+                                      Margin="10,0"
+                                      Orientation="Horizontal">
+
+                                    <ImageButton x:Name="LikeButton" 
+                                                 Source="{Binding begeni_durum}"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="LikeButton_Clicked"
+                                                 VerticalOptions="Center"/>
+                                    
+                                    <ImageButton x:Name="CommentButton"
+                                                 Source="icon_comment.png"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="CommentButton_Clicked"/>
+
+                                    <ImageButton x:Name="DownloadButton"
+                                                 Source="icon_download.png"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="DownloadButton_Clicked"/>
+                                </StackLayout>
+
+                                <Label Text="{Binding begeni_sayisi, StringFormat='{0} beğeni'}" 
+                                       x:Name="likeCountLabel"
+                                       FontSize="Medium"
+                                       Grid.Row="3"
+                                       Grid.Column="0"
+                                       Margin="15,0,0,0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="likeCountLabel_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label Text="{Binding sinif_adi}"
+                                       FontSize="Medium"
+                                       Grid.Row="2"
+                                       Grid.Column="1"
+                                       HorizontalOptions="EndAndExpand"
+                                       VerticalOptions="Center"
+                                       Margin="0,0,15,0"/>
+
+                                <Label Text="{Binding aciklama}" 
+                                       FontSize="Medium"
+                                       Grid.Row="4"
+                                       Margin="15,0,0,0"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <BoxView Grid.Row="5"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         HeightRequest="2"
+                                         Background="#191919"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                    <Button Text="Daha Fazla Yükle"
+                            Clicked="LoadMore_Clicked"/>
+                </CollectionView.Footer>
+            </CollectionView>
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <ImageButton Grid.Row="0"
+                                Grid.Column="0"
+                                 x:Name="btnAnaSayfa"
+                                Source="icon_home.png"
+                                BackgroundColor="Transparent"
+                                Clicked="VeliAnaSayfa_Clicked"/>
+
+                    <ImageButton Grid.Row="0"
+                                 Grid.Column="1"
+                                 x:Name="btnProfil" 
+                                 Source="icon_profil.png"
+                                 BackgroundColor="Transparent" 
+                                 Clicked="ProfilPage_Clicked"/>
+                </Grid>
+
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

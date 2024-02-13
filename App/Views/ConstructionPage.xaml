@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ConstructionPage"
+             Style="{StaticResource MyPageStyle}">
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+            <Label Text="Bu alanda çalışmalar devam ediyor. Sonraki güncellemelerde tamamlanacak."
+                   TextColor="#F6F1EE"
+                   FontSize="Title"
+                   FontAttributes="Italic"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"/>
+            <Image Source="construction.png"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+        </Grid>
+</ContentPage>

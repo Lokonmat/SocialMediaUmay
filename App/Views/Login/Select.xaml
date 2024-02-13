@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Login.Select"
+             Background="#FFF6F4"
+             NavigationPage.HasNavigationBar="False">
+    <AbsoluteLayout>
+
+        <BoxView AbsoluteLayout.LayoutBounds="1, -1, 1, 0.845"
+                 AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional,PositionProportional"
+                 Color="#F86F03"                 
+                 CornerRadius="100"/>
+
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.4"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="Öğretmen Olarak Kayıt Ol"
+                BackgroundColor="#525FE1"
+                CornerRadius="35"
+                Clicked="TeacherRegistorNavigateButton"/>
+
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="Veli Olarak Kayıt Ol"
+                BackgroundColor="#525FE1"
+                CornerRadius="35"
+                Clicked="ParentRegistorNavigateButton"/>
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.OgretmenPages.Paylasimlar.PaylasimTuruSecme"
+             Style="{StaticResource MyPageStyle}">
+    
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Fotoğraf Paylaş"
+                    TextColor="#4F4A45"
+                    BackgroundColor="#F6F1EE"
+                    FontSize="Medium"
+                    CornerRadius="50"
+                    Clicked="fotografSecim_clicked"
+                    HeightRequest="100"/>
+
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Video Paylaş"
+                    TextColor="#4F4A45"
+                    BackgroundColor="#F6F1EE"
+                    FontSize="Medium"
+                    CornerRadius="50"
+                    Clicked="videoSecimi_Clicked"/>
+
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="PDF Paylaş"
+                    TextColor="#4F4A45"
+                    BackgroundColor="#F6F1EE"                    
+                    FontSize="Medium"
+                    CornerRadius="50"                                        
+                    Clicked="pdfSecim_clicked"/>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>
