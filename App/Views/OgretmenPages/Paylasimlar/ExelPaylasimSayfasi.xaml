@@ -98,6 +98,7 @@
                     <Label Grid.Row="1"
                            Grid.Column="1"
                            Text="Tümünü Seç"
+                           x:Name="selectAllStudentLabel"
                            FontSize="Medium"/>
 
                     <CollectionView x:Name="studentCollectionView"

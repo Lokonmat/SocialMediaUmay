@@ -77,9 +77,6 @@
     <EmbeddedResource Update="Views\OgretmenPages\Paylasimlar\ExelPaylasimSayfasi.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\OgretmenPages\Paylasimlar\PaylasimTuruSecme.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\OgretmenPages\Paylasimlar\PDFPaylasimSayfasi.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

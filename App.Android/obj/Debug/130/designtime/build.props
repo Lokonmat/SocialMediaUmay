@@ -25,9 +25,9 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638434517459423335
+_nugetassetstimestamp=638434999627924018
 typemapkind=strings-asm
 androidsupportedabis=armeabi-v7a
 arm64-v8a
 androidmanifestplaceholders=
-projectfullpath=c:\users\batuh\onedrive\masaüstü\social mediaapp\app\app.android\app.android.csproj
+projectfullpath=c:\users\yazilim\desktop\socialmediaumay\app.android\app.android.csproj

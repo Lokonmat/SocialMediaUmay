@@ -34,6 +34,8 @@ namespace App.Views.OgretmenPages.Paylasimlar
             viewModel = new PicSelectPageViewModel();
             BindingContext = viewModel;
             studentCollectionView.ItemsSource = Ogrencis;
+            selectAllStudent.IsVisible = false;
+            selectAllStudentLabel.IsVisible = false;
             LoadSinifPicker();
         }
         private void UpdateStudentsSelection()
@@ -223,6 +225,8 @@ namespace App.Views.OgretmenPages.Paylasimlar
             {
                 if (picker1.SelectedIndex != -1)
                 {
+                    selectAllStudent.IsVisible = true;
+                    selectAllStudentLabel.IsVisible = true;
                     await UpdateStudentList();
                 }
             };
