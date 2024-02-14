@@ -8457,23 +8457,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\batuh\\.nuget\\packages\\": {},
+    "C:\\Users\\Yazilim\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj",
-      "packagesPath": "C:\\Users\\batuh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\obj\\",
+      "projectPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj",
+      "packagesPath": "C:\\Users\\Yazilim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\batuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yazilim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

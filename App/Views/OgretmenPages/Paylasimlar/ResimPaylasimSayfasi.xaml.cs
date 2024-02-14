@@ -44,7 +44,9 @@ namespace App.Views.OgretmenPages.Paylasimlar.Resimler
             InitializeComponent();
             viewModel = new PicSelectPageViewModel();
             BindingContext = viewModel;
-            studentCollectionView.ItemsSource = Ogrencis;
+            studentCollectionView.ItemsSource = Ogrencis; 
+            selectAllStudent.IsVisible = false;
+            selectAllStudentLabel.IsVisible = false;
             LoadSinifPicker();            
         }
         // Resmi boyutlandır ve geçici bir dosyaya kaydet
@@ -157,8 +159,6 @@ namespace App.Views.OgretmenPages.Paylasimlar.Resimler
                         // Dosya yolunu görüntü öğesine atayın
                         selectedImage.Source = ImageSource.FromFile(tempFilePath);
                         imagePath = tempFilePath;
-
-                        selectedImageName = Path.GetFileName(selectedImagePath);
                     };
                     cropPage.SetImageSize(fileResult.FullPath, 300, 300);
                     await Navigation.PushModalAsync(cropPage);
@@ -253,6 +253,8 @@ namespace App.Views.OgretmenPages.Paylasimlar.Resimler
             {
                 if (picker1.SelectedIndex != -1)
                 {
+                    selectAllStudent.IsVisible = true;
+                    selectAllStudentLabel.IsVisible = true;
                     await UpdateStudentList();
                 }
             };

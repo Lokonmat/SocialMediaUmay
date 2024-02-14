@@ -99,6 +99,7 @@
                               CheckedChanged="SelectAllStudent_CheckedChanged"/>
                     <Label Grid.Row="1"           
                            Grid.Column="1"
+                           x:Name="selectAllStudentLabel"
                            Text="Tümünü Seç"
                            FontSize="Medium"/>
 

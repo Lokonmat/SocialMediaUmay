@@ -28,6 +28,9 @@ namespace App.Views.OgretmenPages.Paylasimlar
         {
             InitializeComponent();
             studentCollectionView.ItemsSource = Ogrencis;
+            selectAllStudent.IsVisible = false;
+            selectAllStudentLabel.IsVisible = false;
+
             LoadSinifPicker();
         }
         private async void LoadSinifPicker()
@@ -42,6 +45,8 @@ namespace App.Views.OgretmenPages.Paylasimlar
             {
                 if (picker1.SelectedIndex != -1)
                 {
+                    selectAllStudent.IsVisible = true;
+                    selectAllStudentLabel.IsVisible = true;
                     await UpdateStudentList();
                 }
             };

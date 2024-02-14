@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App.iOS\\App.iOS.csproj": {}
+    "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App.iOS\\App.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App.iOS\\App.iOS.csproj": {
+    "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App.iOS\\App.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App.iOS\\App.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App.iOS\\App.iOS.csproj",
         "projectName": "App.iOS",
-        "projectPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App.iOS\\App.iOS.csproj",
-        "packagesPath": "C:\\Users\\batuh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App.iOS\\obj\\",
+        "projectPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App.iOS\\App.iOS.csproj",
+        "packagesPath": "C:\\Users\\Yazilim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\batuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yazilim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj": {
-                "projectPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj"
+              "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj": {
+                "projectPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj"
               }
             }
           }
@@ -124,20 +124,20 @@
         }
       }
     },
-    "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj": {
+    "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\App.csproj",
-        "packagesPath": "C:\\Users\\batuh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\batuh\\OneDrive\\Masaüstü\\Social MediaApp\\App\\App\\obj\\",
+        "projectPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\App.csproj",
+        "packagesPath": "C:\\Users\\Yazilim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yazilim\\Desktop\\SocialMediaUmay\\App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\batuh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yazilim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
